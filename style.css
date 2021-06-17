@@ -12,6 +12,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #F2F2F2;
+  overflow: hidden;
 }
 
 .page-wrapper {
@@ -50,143 +51,107 @@ header {
   display: flex;
   flex-direction: row-reverse;
   padding: 50px 0;
+  overflow: visible;
 }
 
-.top-row, .bottom-row {
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.top-row,
+.bottom-row {
   display: flex;
   flex-direction: row-reverse;
   height: 200px;
   margin-bottom: 10px;
+  overflow-x: scroll;
+}
+
+.top-row::-webkit-scrollbar,
+.bottom-row::-webkit-scrollbar {
+  display: none;
+}
+
+.img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  margin-left: 10px;
+  height: 100%;
+  flex-shrink: 0;
+  scroll-snap-align: end;
 }
 
 .top-img-one {
   background-image: url("./Assets/slider-image-5.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 5px;
   width: 260px;
-  height: 100%;
-  margin-left: 10px;
 }
 
 .top-img-two {
   background-image: url("./Assets/slider-image-8.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 5px;
   width: 180px;
-  height: 100%;
-  margin-left: 10px;
 }
 
 .top-img-three {
   background-image: url("./Assets/slider-image-9.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 5px;
   width: 220px;
-  height: 100%;
-  margin-left: 10px;
 }
 
 .top-img-four {
   background-image: url("./Assets/slider-image-6.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 5px;
   width: 120px;
-  height: 100%;
-  margin-left: 10px;
 }
 
 .top-img-five {
   background-image: url("./Assets/slider-image-7.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 5px;
   width: 180px;
-  height: 100%;
-  margin-left: 10px;
 }
 
 .top-img-six {
   background-image: url("./Assets/slider-image-4.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 5px;
   width: 220px;
-  height: 100%;
-  margin-left: 10px;
 }
 
 .bottom-img-one {
   background-image: url("./Assets/slider-image-3.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 5px;
   width: 180px;
-  height: 100%;
-  margin-left: 10px;
 }
 
 .bottom-img-two {
   background-image: url("./Assets/slider-image-2.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 5px;
   width: 120px;
-  height: 100%;
-  margin-left: 10px;
 }
 
 .bottom-img-three {
   background-image: url("./Assets/slider-image-1.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 5px;
   width: 260px;
-  height: 100%;
-  margin-left: 10px;
 }
 
 .bottom-img-four {
   background-image: url("./Assets/slider-image-4.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 5px;
   width: 220px;
-  height: 100%;
-  margin-left: 10px;
 }
 
 .bottom-img-five {
   background-image: url("./Assets/slider-image-9.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 5px;
   width: 260px;
-  height: 100%;
-  margin-left: 10px;
 }
 
 .slider-comands {
   display: flex;
   flex-direction: column;
-  margin-left: 100px;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+  background-color: #F2F2F2;
+  width: 200px;
 }
 
-.prev, .next {
+.prev,
+.next {
   width: 60px;
   height: 60px;
   border: 1px solid #DDDDDD;
@@ -206,7 +171,8 @@ header {
   background-image: url("./Assets/arrow-gray-right.png");
 }
 
-.prev:hover, .next:hover {
+.prev:hover,
+.next:hover {
   border: 1px solid #134880;
 }
 
